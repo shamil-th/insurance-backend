@@ -1,4 +1,3 @@
-const mongodb = require('mongodb');
 const mongoose = require ('mongoose');
 
 const aplicationSchema = new mongoose.Schema({
@@ -22,12 +21,16 @@ const aplicationSchema = new mongoose.Schema({
         type : String,
         require : true
     },
+    age : {
+        type : Number,
+        require : true
+    },
     address : {
         type : String,
         require : true
     },
     qualification : {
-        type : String,
+        type : [],
         require : true
     },
     profession : {

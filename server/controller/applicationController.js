@@ -32,6 +32,7 @@ exports.create = async (req, res) => {
             "email",
             "gender",
             "dob",
+            "age",
             "address",
             "qualification",
             "profession",
