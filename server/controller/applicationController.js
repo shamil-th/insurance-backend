@@ -25,7 +25,7 @@ exports.create = async (req, res) => {
         } else if (error) {
             return res.status(500).json({ error: "server error" + error })
         }
-        const status = 'pending';
+        const status = 'Pending';
         const requireFields = [
             "salutation",
             "name",
@@ -96,7 +96,6 @@ exports.find = async (req, res) => {
             });
         }
 
-        // If no status is provided, include a $match stage with an empty object to get all data
         pipeline.push({
             $match: {}
         });
@@ -108,29 +107,6 @@ exports.find = async (req, res) => {
         res.status(500).json({ error: 'Internal server error ' + err.message });
     }
 };
-
-
-
-// exports.update = async (req, res) => {
-//     const { id } = req.params;
-//     const { status } = req.body;
-
-//     try {
-//         const updatedApplication = await applicationDb.findByIdAndUpdate(
-//             id,
-//             { status },
-
-//         );
-
-//         if (!updatedApplication) {
-//             return res.status(404).send({ message: 'Application not found' });
-//         }
-
-//         res.send(updatedApplication);
-//     } catch (error) {
-//         res.status(500).send({ message: 'Internal server error' });
-//     }
-// };
 
 
 exports.update = async (req, res) => {
